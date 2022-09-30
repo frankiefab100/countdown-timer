@@ -26,6 +26,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 20px;
+  max-width: 510px;
 }
 
 h1 {
@@ -35,7 +36,7 @@ h1 {
   text-align: center;
 }
 
-.countdown-form {
+#countdown-form {
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -76,6 +77,10 @@ button:hover {
   text-align: center;
 }
 
+.countdown div {
+  margin: 10px;
+}
+
 .timer {
   display: flex;
   justify-content: center;
@@ -96,10 +101,6 @@ button:hover {
   margin: 0;
 }
 
-.countdown div {
-  margin: 10px;
-}
-
 .countdown p {
   background-color: #2f5d6f;
   border-radius: 5px;
@@ -116,11 +117,34 @@ button:hover {
   margin-top: 10px;
 }
 
-.hidden {
-  display: none;
-}
-
-.completed-countdown {
+.complete {
   position: relative;
   top: 60px;
+}
+
+.complete-title {
+  animation: reflex-name 4s infinite;
+}
+
+@keyframes reflex-name {
+  0% {
+    color: #ff1b1b;
+  }
+
+  25% {
+    color: #06296e;
+  }
+
+  50% {
+    color: #ff1bc2;
+    transform: scale(1.2);
+  }
+
+  75% {
+    color: #087902;
+  }
+
+  100% {
+    color: #410279;
+  }
 }

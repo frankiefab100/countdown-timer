@@ -2,12 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Countdown PLAY</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Custom Count Down Timer</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="container">
+      <div id="input-container" class="input-container">
+        <h1>Set Countdown Timer</h1>
+        <form id="countdown-form">
+          <label for="title">Event Name</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Enter Countdown Name"
+          />
+
+          <label for="date-picker">Select Date</label>
+          <input
+            type="date"
+            name="date-picker"
+            id="date-picker"
+            placeholder="Select Countdown Day"
+          />
+
+          <button type="submit">Set Countdown</button>
+        </form>
+      </div>
+
+      <!-- Count Down -->
+      <div hidden class="countdown" id="countdown">
+        <h1 id="countdown-title">Countdown Title</h1>
+
+        <div class="timer">
+          <div class="date">
+            <p class="days"></p>
+            <h3>Days</h3>
+          </div>
+
+          <div class="date">
+            <p class="hours"></p>
+            <h3>Hours</h3>
+          </div>
+
+          <div class="date">
+            <p class="minutes"></p>
+            <h3>Minutes</h3>
+          </div>
+
+          <div class="date">
+            <p class="seconds"></p>
+            <h3>Seconds</h3>
+          </div>
+        </div>
+
+        <button class="reset-btn" type="reset">Reset Countdown</button>
+      </div>
+
+      <!-- Completed -->
+      <div hidden class="complete" id="complete">
+        <h1 class="complete-title">Completed</h1>
+        <p class="complete-details">Countdown completed on 06-04-2022</p>
+
+        <button id="start-new">New Countdown</button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
